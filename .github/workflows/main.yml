@@ -33,7 +33,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "smohamed"
           heroku_email: "mohamed@saoudi.tk"
-          appdir: "/"
+          
           healthcheck: "https://smohamed.herokuapp.com/"
           env_file: ".env"
         env:
