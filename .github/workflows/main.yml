@@ -22,7 +22,7 @@ jobs:
       - run: npm install ejs
 
 
-      - run: npm run setup data.json
+      - run: npm run setup package.json
       - run: |
           git config --global user.email "mohamed@saoudi.tk"
           git config --global user.name "saoudimo"
