@@ -20,28 +20,24 @@ jobs:
       - run: npm install mongoose
 
       - run: npm install ejs
+
+
+      - run: npm run setup /data.json
       - run: |
-
           git config --global user.email "mohamed@saoudi.tk"
-
           git config --global user.name "saoudimo"
-
           git add -A
-
-          git commit -m "Added package.json"
-
+          git commit -m "Added data.json"
       - uses: akhileshns/heroku-deploy@master
-
         with:
-
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-
           heroku_app_name: "smohamed"
-
           heroku_email: "mohamed@saoudi.tk"
-
-         
-
+          appdir: ""
           healthcheck: "https://smohamed.herokuapp.com/"
+          env_file: ".env"
+        env:
+          HD_CHECK: "true"
+      - run: npm run test-action https://smohamed.herokuapp.com/
 
-         
+  
