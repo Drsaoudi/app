@@ -31,13 +31,13 @@ jobs:
       - uses: akhileshns/heroku-deploy@master
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "smohamed"
+          heroku_app_name: "smohamedthreehgt"
           heroku_email: "mohamed@saoudi.tk"
           
           healthcheck: "https://smohamed.herokuapp.com/"
           
         
           
-      - run: npm run test-action https://smohamed.herokuapp.com/
+      - run: npm run test-action https://smohamedthreehgt.herokuapp.com/
 
   
